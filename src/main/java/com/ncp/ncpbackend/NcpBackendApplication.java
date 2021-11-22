@@ -28,9 +28,38 @@ public class NcpBackendApplication {
 		return repository.findAll();
 	}
 
+	@Autowired
+	private studentrepository studentrepository;
+
+	@PostMapping("/student")
+	public student addStudent(@RequestBody student student) {
+		return studentrepository.save(student);
+	}
+
+	@GetMapping("/student")
+	public List<student> getStudent() {
+		return studentrepository.findAll();
+	}
+
+	@Autowired
+	private facultyrepository facultyrepository;
+
+	@PostMapping("/faculty")
+	public faculty addFaculty(@RequestBody faculty faculty) {
+		return facultyrepository.save(faculty);
+	}
+
+	@GetMapping("/faculty")
+	public List<faculty> getfaculty() {
+		return facultyrepository.findAll();
+	}
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(NcpBackendApplication.class, args);
 	}
+
+
+
 
 }
