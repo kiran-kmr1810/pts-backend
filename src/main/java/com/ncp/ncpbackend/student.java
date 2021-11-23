@@ -19,9 +19,10 @@ public class student {
     @Id
     @GeneratedValue
     private int student_id;
+    private String roll_number;
     private String name ;
     private String mail_id;
-    private boolean is_assigned;
+    private boolean is_assign;
     private boolean is_published1;
     private boolean is_published2;
     private boolean is_published3;
