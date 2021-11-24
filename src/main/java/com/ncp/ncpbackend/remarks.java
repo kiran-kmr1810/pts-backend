@@ -19,7 +19,7 @@ public class remarks {
     @Id
     @GeneratedValue
 
-    private int remarks_id;
-    private int review_id ;
+    private int remarksid;
+    private int reviewid ;
     private String description;
 }

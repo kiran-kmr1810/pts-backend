@@ -15,11 +15,11 @@ import javax.persistence.*;
 public class mentor_meeting {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int meeting_id;
-    private int faculty_id;
-    private int project_id;
+    private int meetingid;
+    private int facultyid;
+    private int projectid;
     private String title;
     private String date;
-    private String start_time;
-    private String end_time;
+    private String starttime;
+    private String endtime;
 }

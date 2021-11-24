@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class project_student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int project_student_id;
-    private int project_id;
-    private int student_id;
+    private int projectstudentid;
+    private int projectid;
+    private int studentid;
 }

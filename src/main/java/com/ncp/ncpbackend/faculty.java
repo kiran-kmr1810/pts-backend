@@ -17,11 +17,11 @@ import javax.persistence.Table;
 public class faculty {
     @Id
     @GeneratedValue
-    private int faculty_id;
-    private int panel_id;
+    private int facultyid;
+    private int panelid;
     private String name;
-    private String mail_id;
-    private boolean is_incharge;
-    private boolean is_coordinator;
+    private String mailid;
+    private boolean isincharge;
+    private boolean iscoordinator;
 
 }

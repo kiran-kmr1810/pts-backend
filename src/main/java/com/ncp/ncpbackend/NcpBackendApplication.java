@@ -48,9 +48,9 @@ public class NcpBackendApplication {
 	@PutMapping("/student/review1/{id}")
 	public student updateR1Student(@RequestBody student newStudent, @PathVariable int id ){
 		return studentrepository.findById(id).map(student -> {
-			student.setReview1_1(newStudent.getReview1_1());
-			student.setReview1_2(newStudent.getReview1_2());
-			student.setReview1_3(newStudent.getReview1_3());
+			student.setReview11(newStudent.getReview11());
+			student.setReview12(newStudent.getReview12());
+			student.setReview13(newStudent.getReview13());
 			return studentrepository.save(student);
 		}).orElseGet(() -> {
 			//student.setId(id);
@@ -62,9 +62,9 @@ public class NcpBackendApplication {
 	@PutMapping("/student/review2/{id}")
 	public student updateR2Student(@RequestBody student newStudent, @PathVariable int id ){
 		return studentrepository.findById(id).map(student -> {
-			student.setReview2_1(newStudent.getReview2_1());
-			student.setReview2_2(newStudent.getReview2_2());
-			student.setReview2_3(newStudent.getReview2_3());
+			student.setReview21(newStudent.getReview21());
+			student.setReview22(newStudent.getReview22());
+			student.setReview23(newStudent.getReview23());
 			return studentrepository.save(student);
 		}).orElseGet(() -> {
 			//student.setId(id);
@@ -76,9 +76,9 @@ public class NcpBackendApplication {
 	@PutMapping("/student/review3/{id}")
 	public student updateR3Student(@RequestBody student newStudent, @PathVariable int id ){
 		return studentrepository.findById(id).map(student -> {
-			student.setReview3_1(newStudent.getReview3_1());
-			student.setReview3_2(newStudent.getReview3_2());
-			student.setReview3_3(newStudent.getReview3_3());
+			student.setReview31(newStudent.getReview31());
+			student.setReview32(newStudent.getReview32());
+			student.setReview33(newStudent.getReview33());
 			return studentrepository.save(student);
 		}).orElseGet(() -> {
 			//student.setId(id);

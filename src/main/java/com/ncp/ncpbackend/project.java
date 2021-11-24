@@ -15,15 +15,15 @@ import javax.persistence.Table;
 @NoArgsConstructor
 public class project {
     @Id
-    private int project_id;
-    private int faculty_id;
-    private int panel_id;
-    private String project_title;
-    private String project_type;
-    private String review1_date;
-    private String review1_time;
-    private String review2_date;
-    private String review2_time;
-    private String review3_date;
-    private String review3_time;
+    private int projectid;
+    private int facultyid;
+    private int panelid;
+    private String projecttitle;
+    private String projecttype;
+    private String review1date;
+    private String review1time;
+    private String review2date;
+    private String review2time;
+    private String review3date;
+    private String review3time;
 }

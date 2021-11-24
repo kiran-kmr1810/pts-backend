@@ -18,95 +18,95 @@ public class student {
 
     @Id
     @GeneratedValue
-    private int student_id;
-    private String roll_number;
+    private int studentid;
+    private String rollnumber;
     private String name ;
-    private String mail_id;
-    private boolean is_assign;
-    private boolean is_published1;
-    private boolean is_published2;
-    private boolean is_published3;
-    private int review1_1;
-    private int review1_2;
-    private int review1_3;
-    private int review2_1;
-    private int review2_2;
-    private int review2_3;
-    private int review3_1;
-    private int review3_2;
-    private int review3_3;
+    private String mailid;
+    private boolean isassign;
+    private boolean ispublished1;
+    private boolean ispublished2;
+    private boolean ispublished3;
+    private int review11;
+    private int review12;
+    private int review13;
+    private int review21;
+    private int review22;
+    private int review23;
+    private int review31;
+    private int review32;
+    private int review33;
 
-    public int getReview1_1() {
-        return review1_1;
+    public int getReview11() {
+        return review11;
     }
 
-    public void setReview1_1(int review1_1) {
-        this.review1_1 = review1_1;
+    public void setReview11(int review11) {
+        this.review11 = review11;
     }
 
-    public int getReview1_2() {
-        return review1_2;
-    }
-
-
-    public void setReview1_2(int review1_2) {
-        this.review1_2 = review1_2;
-    }
-
-    public int getReview1_3() {
-        return review1_3;
-    }
-
-    public void setReview1_3(int review1_3) {
-        this.review1_3 = review1_3;
+    public int getReview12() {
+        return review12;
     }
 
 
-    public int getReview2_1() {
-        return review2_1;
+    public void setReview12(int review12) {
+        this.review12 = review12;
     }
 
-    public void setReview2_1(int review2_1) {
-        this.review2_1 = review2_1;
+    public int getReview13() {
+        return review13;
     }
 
-    public int getReview2_2() {
-        return review2_2;
+    public void setReview13(int review13) {
+        this.review13 = review13;
     }
 
-    public void setReview2_2(int review2_2) {
-        this.review2_2 = review2_2;
+
+    public int getReview21() {
+        return review21;
     }
 
-    public int getReview2_3() {
-        return review2_3;
+    public void setReview21(int review21) {
+        this.review21 = review21;
     }
 
-    public void setReview2_3(int review2_3) {
-        this.review2_3 = review2_3;
+    public int getReview22() {
+        return review22;
     }
 
-    public int getReview3_1() {
-        return review3_1;
+    public void setReview22(int review22) {
+        this.review22 = review22;
     }
 
-    public void setReview3_1(int review3_1) {
-        this.review3_1 = review3_1;
+    public int getReview23() {
+        return review23;
     }
 
-    public int getReview3_2() {
-        return review3_2;
+    public void setReview23(int review23) {
+        this.review23 = review23;
     }
 
-    public void setReview3_2(int review3_2) {
-        this.review3_2 = review3_2;
+    public int getReview31() {
+        return review31;
     }
 
-    public int getReview3_3() {
-        return review3_3;
+    public void setReview31(int review31) {
+        this.review31 = review31;
     }
 
-    public void setReview3_3(int review3_3) {
-        this.review3_3 = review3_3;
+    public int getReview32() {
+        return review32;
+    }
+
+    public void setReview32(int review32) {
+        this.review32 = review32;
+    }
+
+    public int getReview33() {
+        return review33;
+    }
+
+    public void setReview33(int review33) {
+        this.review33 = review33;
     }
 }

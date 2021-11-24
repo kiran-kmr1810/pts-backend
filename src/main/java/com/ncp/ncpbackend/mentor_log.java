@@ -15,9 +15,9 @@ import javax.persistence.*;
 public class mentor_log {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int log_id;
-    private int faculty_id;
-    private int project_id;
+    private int logid;
+    private int facultyid;
+    private int projectid;
     private String title;
     private String description;
     private String date;

@@ -18,7 +18,7 @@ public class announcement {
     @Id
     @GeneratedValue
 
-    private int announcement_id;
+    private int announcementid;
     private String description ;
     private String date;
     private String time;
