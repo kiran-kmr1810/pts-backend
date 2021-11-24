@@ -144,10 +144,23 @@ public class NcpBackendApplication {
 	@GetMapping("/project_student")
 	public List<project_student> getProjectStudent() { return project_studentrepository.findAll(); }
 
+
+	@Autowired
+	private remarksrepository remarksrepository;
+
+	@PostMapping("/remarks")
+	public remarks addremarks(@RequestBody remarks remarks) {
+		return remarksrepository.save(remarks);
+	}
+
+	@GetMapping("/remarks")
+	public List<remarks> getremarks() {
+		return remarksrepository.findAll();
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(NcpBackendApplication.class, args);
 	}
-
 
 
 
