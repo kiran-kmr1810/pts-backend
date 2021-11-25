@@ -3,13 +3,13 @@ package com.ncp.ncpbackend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
 
@@ -37,7 +37,6 @@ public class NcpBackendApplication {
 	@CrossOrigin(origins = "*")
 	@PostMapping("/student")
 	public student addStudent(@RequestBody student student) {
-		System.out.println(student);
 		return studentrepository.save(student);
 	}
 
@@ -108,24 +107,13 @@ public class NcpBackendApplication {
 
 	@CrossOrigin(origins = "*")
 	@PostMapping("/faculty")
-	public faculty addFaculty(@RequestBody faculty faculty){
+	public faculty addFaculty(@RequestBody faculty faculty) {
 		return facultyrepository.save(faculty);
 	}
 
 	@GetMapping("/faculty")
 	public List<faculty> getfaculty() {
 		return facultyrepository.findAll();
-	}
-
-	@GetMapping("/faculty/{nm}")
-	public List<String> getfacultynm() {
-		return facultyrepository.fun("Jeyakumar");
-	}
-
-
-	@GetMapping("/project/students/{pid}")
-	public List<student> getStudentsProject(@PathVariable int pid){
-		return studentrepository.findProjectStudents(pid);
 	}
 
 	@Autowired
@@ -168,7 +156,9 @@ public class NcpBackendApplication {
 	@GetMapping("/project")
 	public List<project> getProject() { return projectrepository.findAll(); }
 
-	@CrossOrigin(origins = "*")
+	@Autowired
+	private project_studentrepository project_studentrepository;
+
 	@PostMapping("/project_student")
 	public project_student addProjectStudent(@RequestBody project_student project_student) { return project_studentrepository.save(project_student); }
 
@@ -179,7 +169,6 @@ public class NcpBackendApplication {
 	@Autowired
 	private remarksrepository remarksrepository;
 
-	@CrossOrigin(origins = "*")
 	@PostMapping("/remarks")
 	public remarks addremarks(@RequestBody remarks remarks) {
 		return remarksrepository.save(remarks);
