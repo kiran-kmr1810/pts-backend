@@ -3,13 +3,13 @@ package com.ncp.ncpbackend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 
 
@@ -20,6 +20,7 @@ public class NcpBackendApplication {
 	@Autowired
 	private announcementrepository repository;
 
+	@CrossOrigin(origins = "*")
 	@PostMapping("/announcement")
 	public announcement addAnnouncement(@RequestBody announcement announcement) {
 		return repository.save(announcement);
@@ -33,8 +34,10 @@ public class NcpBackendApplication {
 	@Autowired
 	private studentrepository studentrepository;
 
+	@CrossOrigin(origins = "*")
 	@PostMapping("/student")
 	public student addStudent(@RequestBody student student) {
+		System.out.println(student);
 		return studentrepository.save(student);
 	}
 
@@ -44,7 +47,7 @@ public class NcpBackendApplication {
 	}
 
 
-	@CrossOrigin(origins = "http://localhost:3001")
+	@CrossOrigin(origins = "*")
 	@PutMapping("/student/review1/{id}")
 	public student updateR1Student(@RequestBody student newStudent, @PathVariable int id ){
 		return studentrepository.findById(id).map(student -> {
@@ -58,7 +61,7 @@ public class NcpBackendApplication {
 		});
 	}
 
-	@CrossOrigin(origins = "http://localhost:3001")
+	@CrossOrigin(origins = "*")
 	@PutMapping("/student/review2/{id}")
 	public student updateR2Student(@RequestBody student newStudent, @PathVariable int id ){
 		return studentrepository.findById(id).map(student -> {
@@ -72,7 +75,7 @@ public class NcpBackendApplication {
 		});
 	}
 
-	@CrossOrigin(origins = "http://localhost:3001")
+	@CrossOrigin(origins = "*")
 	@PutMapping("/student/review3/{id}")
 	public student updateR3Student(@RequestBody student newStudent, @PathVariable int id ){
 		return studentrepository.findById(id).map(student -> {
@@ -86,11 +89,26 @@ public class NcpBackendApplication {
 		});
 	}
 
+
+	//PROJECT STUDENT FETCH
+
+	@Autowired
+	private project_studentrepository project_studentrepository;
+
+	//@GetMapping("/panel/project/{id}")
+	/*public List<student> getstudentsProject(@PathVariable int id){
+		//List<project_student> studentIds = project_studentrepository.findAllById(id);
+		//System.out.println(project_studentrepository.findAllStudents().toString());
+		return null;
+	}*/
+
+
 	@Autowired
 	private facultyrepository facultyrepository;
 
+	@CrossOrigin(origins = "*")
 	@PostMapping("/faculty")
-	public faculty addFaculty(@RequestBody faculty faculty) {
+	public faculty addFaculty(@RequestBody faculty faculty){
 		return facultyrepository.save(faculty);
 	}
 
@@ -99,9 +117,21 @@ public class NcpBackendApplication {
 		return facultyrepository.findAll();
 	}
 
+	@GetMapping("/faculty/{nm}")
+	public List<String> getfacultynm() {
+		return facultyrepository.fun("Jeyakumar");
+	}
+
+
+	@GetMapping("/project/students/{pid}")
+	public List<student> getStudentsProject(@PathVariable int pid){
+		return studentrepository.findProjectStudents(pid);
+	}
+
 	@Autowired
 	private mentor_logrepository mentor_logrepository;
 
+	@CrossOrigin(origins = "*")
 	@PostMapping("/mentor_log")
 	public mentor_log addMentorLog(@RequestBody mentor_log mentor_log) { return mentor_logrepository.save(mentor_log); }
 
@@ -111,6 +141,7 @@ public class NcpBackendApplication {
 	@Autowired
 	private mentor_meetingrepository mentor_meetingrepository;
 
+	@CrossOrigin(origins = "*")
 	@PostMapping("/mentor_meeting")
 	public mentor_meeting addMentorMeeting(@RequestBody mentor_meeting mentor_meeting) { return mentor_meetingrepository.save(mentor_meeting); }
 
@@ -120,6 +151,7 @@ public class NcpBackendApplication {
 	@Autowired
 	private mentor_announcementrepository mentor_announcementrepository;
 
+	@CrossOrigin(origins = "*")
 	@PostMapping("/mentor_announcement")
 	public mentor_announcement addMentorAnnouncement(@RequestBody mentor_announcement mentor_announcement) { return mentor_announcementrepository.save(mentor_announcement); }
 
@@ -129,15 +161,14 @@ public class NcpBackendApplication {
 	@Autowired
 	private projectrepository projectrepository;
 
+	@CrossOrigin(origins = "*")
 	@PostMapping("/project")
 	public project addProject(@RequestBody project project) { return projectrepository.save(project); }
 
 	@GetMapping("/project")
 	public List<project> getProject() { return projectrepository.findAll(); }
 
-	@Autowired
-	private project_studentrepository project_studentrepository;
-
+	@CrossOrigin(origins = "*")
 	@PostMapping("/project_student")
 	public project_student addProjectStudent(@RequestBody project_student project_student) { return project_studentrepository.save(project_student); }
 
@@ -148,6 +179,7 @@ public class NcpBackendApplication {
 	@Autowired
 	private remarksrepository remarksrepository;
 
+	@CrossOrigin(origins = "*")
 	@PostMapping("/remarks")
 	public remarks addremarks(@RequestBody remarks remarks) {
 		return remarksrepository.save(remarks);
