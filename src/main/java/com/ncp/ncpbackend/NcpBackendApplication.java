@@ -91,9 +91,6 @@ public class NcpBackendApplication {
 
 	//PROJECT STUDENT FETCH
 
-	@Autowired
-	private project_studentrepository project_studentrepository;
-
 	//@GetMapping("/panel/project/{id}")
 	/*public List<student> getstudentsProject(@PathVariable int id){
 		//List<project_student> studentIds = project_studentrepository.findAllById(id);
@@ -159,6 +156,7 @@ public class NcpBackendApplication {
 	@Autowired
 	private project_studentrepository project_studentrepository;
 
+	@CrossOrigin(origins = "*")
 	@PostMapping("/project_student")
 	public project_student addProjectStudent(@RequestBody project_student project_student) { return project_studentrepository.save(project_student); }
 
